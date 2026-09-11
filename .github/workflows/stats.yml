@@ -12,28 +12,26 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         with:
           card: stats
           options: username=KethelyE&show_icons=true&include_all_commits=true&theme=rose_pine
           path: generated/stats.svg
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Generate languages card
         uses: readme-tools/github-readme-stats-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         with:
           card: top-langs
           options: username=KethelyE&layout=compact&langs_count=8&theme=rose_pine
           path: generated/languages.svg
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Commit & Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "style: update GitHub Readme Stats (rose_pine theme)"
+          commit_message: "style: update GitHub Readme Stats"
