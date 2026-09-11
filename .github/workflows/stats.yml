@@ -2,11 +2,11 @@ name: Generate GitHub Readme Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Executa diariamente à meia-noite
-  workflow_dispatch: # Permite rodar manualmente na aba Actions
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write # Permite que a Action grave/salve os arquivos SVG gerados
+  contents: write
 
 jobs:
   publish:
@@ -17,19 +17,21 @@ jobs:
 
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         with:
           card: stats
           options: username=KethelyE&show_icons=true&include_all_commits=true&theme=rose_pine
           path: generated/stats.svg
-          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Generate languages card
         uses: readme-tools/github-readme-stats-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         with:
           card: top-langs
           options: username=KethelyE&layout=compact&langs_count=8&theme=rose_pine
           path: generated/languages.svg
-          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Commit & Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
