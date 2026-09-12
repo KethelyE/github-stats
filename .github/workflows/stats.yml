@@ -2,11 +2,11 @@ name: Generate GitHub Readme Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Executa diariamente à meia-noite
-  workflow_dispatch: # Permite rodar manualmente na aba Actions
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write # Permite que a Action grave/salve os arquivos SVG gerados
+  contents: write
 
 jobs:
   publish:
@@ -19,7 +19,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: username=KethelyE&show_icons=true&include_all_commits=true&bg_color=0d1117&title_color=ff007f&text_color=ffffff&icon_color=ff66b2&border_color=ff007f&hide_border=false
+          options: username=KethelyE&show_icons=true&include_all_commits=true&bg_color=1a1829&title_color=b388ff&text_color=ffffff&icon_color=ff80bf&border_color=b388ff&hide_border=false
           path: generated/stats.svg
           token: ${{ secrets.PAT_TOKEN }}
 
@@ -27,11 +27,11 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: username=KethelyE&layout=compact&langs_count=8&bg_color=0d1117&title_color=ff007f&text_color=ffffff&icon_color=ff66b2&border_color=ff007f&hide_border=false
+          options: username=KethelyE&layout=compact&langs_count=8&bg_color=1a1829&title_color=b388ff&text_color=ffffff&icon_color=ff80bf&border_color=b388ff&hide_border=false
           path: generated/languages.svg
           token: ${{ secrets.PAT_TOKEN }}
 
       - name: Commit & Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "style: update GitHub Readme Stats with strong pink and dark theme"
+          commit_message: "style: update cards color palette to match illustration"
