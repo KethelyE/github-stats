@@ -9,11 +9,11 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Kethely Ester da Silva's GitHub Stats, Rank: C</title>
-        <desc id="descId">Total Stars Earned: 0, Total Commits  : 40, Total PRs: 3, Total Issues: 0, Contributed to (last year): 3</desc>
+        <desc id="descId">Total Stars Earned: 0, Total Commits  : 41, Total PRs: 3, Total Issues: 0, Contributed to (last year): 3</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #ff007f;
+            fill: #b388ff;
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }
           @supports(-moz-appearance: auto) {
@@ -46,18 +46,18 @@
     .not_bold { font-weight: 400 }
     .bold { font-weight: 700 }
     .icon {
-      fill: #ff66b2;
+      fill: #ff80bf;
       display: block;
     }
 
     .rank-circle-rim {
-      stroke: #ff007f;
+      stroke: #b388ff;
       fill: none;
       stroke-width: 6;
       opacity: 0.2;
     }
     .rank-circle {
-      stroke: #ff007f;
+      stroke: #b388ff;
       stroke-dasharray: 250;
       fill: none;
       stroke-width: 6;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 240.64115752561304;
+        stroke-dashoffset: 240.61292677898587;
       }
     }
   
@@ -109,9 +109,9 @@
           y="0.5"
           rx="4.5"
           height="99%"
-          stroke="#ff007f"
+          stroke="#b388ff"
           width="466"
-          fill="#0d1117"
+          fill="#1a1829"
           stroke-opacity="1"
         />
 
@@ -177,7 +177,7 @@
         x="219.01"
         y="12.5"
         data-testid="commits"
-      >40</text>
+      >41</text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
